@@ -1,9 +1,9 @@
-// import uploadImg from "../public/images/Upload-video-preview.jpg";
+//import uploadThumbnail from "../public/images/Upload-video-preview.jpg";
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const crypto = require("crypto");
-const path = require("path");
+// const path = require("path");
 
 const FILE_PATH = "./data/videos.json";
 
@@ -28,16 +28,11 @@ router.get("/:videoId", (req, res) => {
 
 //POST video
 router.post("/", (req, res) => {
-  //   const defaultUploadImg = path.join(
-  //     __dirname,
-  //     "../public/images/Upload-video-preview.jpg"
-  //     // "http://localhost:8080${video.image}"
-  //   );
   const newVideo = {
     id: crypto.randomUUID(),
     title: req.body.title,
     channel: "BrainStation",
-    image: req.body.image,
+    image: "http://localhost:8080/images/Upload-video-preview.jpg",
     description: req.body.description,
     views: "0",
     likes: "0",
