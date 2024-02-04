@@ -44,7 +44,7 @@ router.post("/", (req, res) => {
 
   const videos = readVideos();
   videos.push(newVideo);
-  fs.writeFileSync("./data/videos.json", JSON.stringify(videos));
+  fs.writeFileSync(FILE_PATH, JSON.stringify(videos));
 
   res.status(201).json(newVideo);
 });
