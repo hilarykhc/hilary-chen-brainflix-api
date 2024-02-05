@@ -1,9 +1,7 @@
-//import uploadThumbnail from "../public/images/Upload-video-preview.jpg";
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const crypto = require("crypto");
-// const path = require("path");
 
 const FILE_PATH = "./data/videos.json";
 
